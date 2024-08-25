@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --font-inter: "Inter", sans-serif;
+    --fondo: #F3F5FC;
+    --dark-blue: #0A3871;
+    --gris: #D8DFE8;
+    --color-texto-gris: #495057;
+    --color-azul: #0A3871;
+    --color-blaco: #FFFFFF;
+    --color-invalid: #FF0000;
+}
+
+body{
+    background-color: var(--fondo);
+    box-sizing: border-box;
+    font-family: var(--font-inter);
+}
+
+header{
+    padding: 2.5rem;
+}
+
+.encriptador{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    height: 80vh;
+}
+
+.encriptador__original{
+    padding: 5rem 0;
+}
+
+.encriptador__original__texto{
+    border: none;
+    background-color: var(--fondo);
+    height: 85%;
+    width: 42.5rem;
+    text-align:left;
+    resize: none;
+    font-size: 32px;
+    color: var(--dark-blue);
+}
+
+.encriptador__original__texto::placeholder{
+    color: var(--dark-blue);
+    opacity: 1;
+}
+
+.encriptador__original__texto:focus{
+    outline: none;
+}
+
+.encriptador__original__advertencia{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.encriptador__original__advertencia__p{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.encriptador__original__advertencia_p-invalid{
+    color: var(--color-invalid);
+}
+
+.encriptador__original__botones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.encriptador__original__boton-encriptar, .encriptador__original__boton-desencriptar{
+    text-decoration: none;
+    padding: 1.5rem;
+    width: 20.5rem;
+    border-radius: 24px;
+    gap: 0.625rem;
+    text-align: center;
+    border: solid var(--dark-blue) 1px;
+}
+
+.encriptador__original__boton-encriptar, .encriptador__original__boton-desencriptar:hover{
+    cursor: pointer;
+}
+
+.encriptador__original__boton-encriptar{
+    background-color: var(--dark-blue);
+    color: var(--color-blaco);
+}
+
+.encriptador__original__boton-desencriptar{
+    background-color: var(--gris);
+    background-color: var(--fondo);
+}
+
+.encriptador__resultado{
+    width: 25rem;
+    background-color: var(--color-blaco);
+    padding: 2rem;
+    border-radius: 32px;
+}
+
+.encriptador__resultado__contenedor{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.encriptador__resultado__contenedor h1{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 0 0 1rem;
+    font-weight: 700;
+}
+
+.encriptador__resultado__p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.encriptador__resultado__contenedor-entriptado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.encriptador__resultado__text{
+    resize: none;
+    width: 90%;
+    height: 82.5%;
+    border: none;
+    color: var(--color-texto-gris);
+    font-size: 1.5rem;
+}
+
+.encriptador__resultado__text:focus{
+    outline: none;
+}
+
+.encriptador__resultado__boton-copiar{
+    text-decoration: none;
+    padding: 1.5rem;
+    width: 20.5rem;
+    border-radius: 24px;
+    gap: 0.625rem;
+    text-align: center;
+    background-color: var(--color-blaco);
+    border: solid var(--dark-blue) 1px;
+}
+
+.encriptador__resultado__boton-copiar:hover{
+    cursor: pointer;
+}
+
+
+@media(max-width: 768px){
+    header{
+        padding: 2rem 0;
+    }
+
+    .encriptador{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 85vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    .encriptador__original{
+        height: 80%;
+        padding: 0;
+    }
+
+    .encriptador__original__texto{
+        height: 80%;
+    }
+
+    .encriptador__resultado {
+        width: 80%;
+    }
+
+    .encriptador__resultado__contenedor{
+        margin: 0;
+    }
+
+    .encriptador__resultado__contenedor__img{
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .encriptador__resultado__contenedor h1{
+        margin: 0;
+        padding: 0;
+    }
+
+    .encriptador__resultado__contenedor-entriptado{
+        height: 343px;
+    }
+}
+
+@media(max-width: 375px){
+    .encriptador{
+        padding: 0;
+        width: 100vw;
+    }
+    .encriptador__original{
+        height: 70vh;
+        width: 90%;
+    }
+
+    .encriptador__original__texto{
+        height: 60%;
+        width: 100%;
+    }
+    .encriptador__original__botones{
+        flex-direction: column;
+    }
+
+    .encriptador__resultado{
+        margin: 5rem 0;
+        padding: 1.5rem;
+    }
+}

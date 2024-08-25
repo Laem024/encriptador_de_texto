@@ -4,31 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
+
+    <link rel="preload" href="./styles/normalize.css"> 
+    <link rel="stylesheet" href="./styles/normalize.css">
+
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
     <header>
-        <img src="./img/Logo.png" alt="">
+        <img class="logo" src="./img/Logo.png" alt="logo.png">
     </header>
 
     <main>
-        <section class="Encriptador">
-            <div class="Encriptador__original">
-                <input type="text" class="Encriptador__original__texto" placeholder="Ingrese el texto aqui">
+        <section class="encriptador">
+            <div class="encriptador__original">
+                <textarea type="text" id="encriptar_texto" class="encriptador__original__texto" placeholder="Ingrese el texto aqui"></textarea>
 
-                <p> <img src="./img/zondicons--exclamation-solid.svg" alt="exclamation.svg"> Solo letras minúsculas y sin acentos</p>
-
-                <a href="" class="Encriptador__original__boton">Encriptar</a>
-                <a href="" class="Encriptador__original__boton">Desencriptar</a>
+                <div class="encriptador__original__advertencia">
+                    <img src="./img/zondicons--exclamation-solid.svg" alt="exclamation.svg">
+                    <p id="advertencia_encri" class="encriptador__original__advertencia__p">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="encriptador__original__botones">
+                    <button onclick="encriptar()" id="encriptar_btn" class="encriptador__original__boton-encriptar">Encriptar</button>
+                    <button onclick="desencriptar()"  id="desencriptar_btn" class="encriptador__original__boton-desencriptar">Desencriptar</button>
+                </div>
             </div>
 
-            <div class="Encriptador__resultado">
-                <img src="./img/Muñeco.png" alt="Muñeco.png">
-                <h1>Ningún mensaje fue encontrado</h1>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            <div class="encriptador__resultado">
+                <div class="encriptador__resultado__contenedor">
+                    <img class="encriptador__resultado__contenedor__img" src="./img/Muñeco.png" alt="Muñeco.png">
+                    <h1 class="encriptador__resultado__contenedor__h1">Ningún mensaje fue encontrado</h1>
+                    <p class="encriptador__resultado__p">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+
+                <div class="encriptador__resultado__contenedor-entriptado">
+                    <textarea id="texto_encriptado" class="encriptador__resultado__text" readonly></textarea>
+                    <button onclick="copiar_txt()" class="encriptador__resultado__boton-copiar">Copiar</button>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer></footer>
+    <script src="./js/script.js"></script>
 </body>
 </html>
